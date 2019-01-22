@@ -21,7 +21,7 @@ To run the binary in the folder where it is installed:
     ### Main options: ###
     
     -mol2  : Compare a mol2 file with a mol2 database (multiple molecules in the database)
-             (./InterfaceComparison -mol2 target.mol2 database.mol2)
+             (./InterLig -mol2 target.mol2 database.mol2)
 
     ### Other options: ###
     
