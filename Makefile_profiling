@@ -1,0 +1,7 @@
+all: InterfaceComparison_prof
+
+InterfaceComparison_prof: InterfaceComparison.cpp InterfaceComparison.h
+
+	g++ -static -O1 -g -Wunused-variable -ffast-math -lm -o InterfaceComparison_prof InterfaceComparison.cpp 
+clean:
+	rm -f InterfaceComparison_prof

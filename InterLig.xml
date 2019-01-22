@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdtprojectproperties>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.IncludePaths">
+<language name="holder for library settings">
+
+</language>
+<language name="Assembly">
+
+</language>
+<language name="GNU C++">
+<includepath>/usr/include/c++/4.6/bits</includepath>
+<includepath>/usr/include/i386-linux-gnu</includepath>
+<includepath>/usr/include/c++/4.6</includepath>
+<includepath>/usr/include</includepath>
+<includepath>/usr/include/i386-linux-gnu/bits</includepath>
+<includepath>/usr/include/c++/4.6/tr1</includepath>
+<includepath>/usr/include/linux</includepath>
+<includepath>/usr/include/x86_64-linux-gnu</includepath>
+<includepath>/usr/include/c++/4.6/x86_64-linux-gnu</includepath>
+
+</language>
+<language name="GNU C">
+<includepath>/usr/include</includepath>
+<includepath>/usr/include/i386-linux-gnu/bits</includepath>
+<includepath>/usr/include/i386-linux-gnu</includepath>
+<includepath>/usr/include/x86_64-linux-gnu</includepath>
+<includepath>/usr/include/x86_64-linux-gnu/bits</includepath>
+
+</language>
+</section>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.Macros">
+<language name="holder for library settings">
+
+</language>
+<language name="Assembly">
+
+</language>
+<language name="GNU C++">
+
+</language>
+<language name="GNU C">
+
+</language>
+</section>
+</cdtprojectproperties>
