@@ -36,7 +36,7 @@ long double pvalues[30][1001];
 long double pvaluesMol2[36][1001];
 
 std::string blosum;
-
+std::string superfile;
 
 int nulls;
 RunningStat rs;
@@ -231,6 +231,7 @@ void parse_options(int argc, char* argv[]){
 		}else if(!strcmp(argv[arg], "-super")){
 
 			cout << "Superimpose" << "\n" << flush;
+			superfile = argv[arg + 1];
 			superimpose = true;
 
 		}else if(!strcmp(argv[arg], "-eps")){
@@ -497,7 +498,7 @@ void run_mol(int argc, char* argv[]) {
 	if(superimpose){
 
 		mols3 = copy_list_of_mol2s(argv[3]);
-		out.open("output.mol2");
+		out.open(superfile.c_str());
 
 	}
 
@@ -635,7 +636,7 @@ int main(int argc, char *argv[]) {
 				"   -dW            : weight of sequence similarity (e.g. BLOSUM62) in the optimization procedure (default: 0.5)\n" <<
 				"   -eps           : weight of structural similarity in the optimization procedure (default: 0.5)\n" <<
 				"   -nullP         : percentage of ignored atoms in the smaller molecule (default: 0)\n" <<
-				"   -super         : calculate optimal superposition between aligned molecules\n" <<
+				"   -super <path>  : calculate optimal superposition between aligned molecules\n" <<
 
 				"\nAnnealing options:\n\n" <<
 				"   -anneal <int>  : number of annealing rounds (default: 1)\n" <<
