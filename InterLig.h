@@ -188,7 +188,7 @@ void InterLig::reset(Molecule* A, Molecule* B){
 double InterLig::superimpose(Molecule* m1, Molecule* m2) {
 
 	int i, j, k; /* Counter variables */
-	int natoms = m1->getLength();
+	int natoms = min(m1->getLength(), m2->getLength());
 	double** u = new double*[3]; /* direct product matrix */
 	I = new double*[3]; /* identity matrix */
 	double** t = new double*[3]; /* Temporary storage matrix */
@@ -227,10 +227,10 @@ double InterLig::superimpose(Molecule* m1, Molecule* m2) {
 		}
 	}
 	
-	trans1 = m1->center_molecule(m1->getLength(), this->diffCumulative);
-    trans2 = m2->center_molecule(m1->getLength(), this->diffCumulative);
+	trans1 = m1->center_molecule(natoms, this->diffCumulative);
+    trans2 = m2->center_molecule(natoms, this->diffCumulative);
         
-	for (i = 0; i < m1->getLength(); i++){ /* Construct U matrix */
+	for (i = 0; i < natoms; i++){ /* Construct U matrix */
 
 		if (this->diffCumulative[i] < 5.0) {
 			d1 = m1->getCoord(i); //m1->atm[i].x
@@ -302,7 +302,7 @@ double InterLig::superimpose(Molecule* m1, Molecule* m2) {
 	/* Now calculate final RMS superimposition */
 	error = 0.0;
 	error2 = 0.0;
-	natoms = m1->getLength();
+	//natoms = m1->getLength();
 	//printf("testing7b %f %f\n",m2->atm[1].x,error);
 	//printf ("s1:\t%f\t%f\t%f\n",s[0][0],s[0][1],s[0][2]);
 	//printf ("s2:\t%f\t%f\t%f\n",s[1][0],s[1][1],s[1][2]);
@@ -335,7 +335,7 @@ double InterLig::superimpose(Molecule* m1, Molecule* m2) {
 
 		//dist2=m2->atm[i].x*m2->atm[i].x+m2->atm[i].y*m2->atm[i].y+m2->atm[i].z*m2->atm[i].z;
 		//printf("TEST2-m2\t %d\t%6.3f %6.3f %6.3f\t%e\t%e\n",i,m2->atm[i].x,m2->atm[i].y,m2->atm[i].z,dist2,dist2-dist);
-        for (i = 0; i < m1->getLength(); i++) {
+        for (i = 0; i < natoms; i++) {
         	if (this->diffCumulative[i] < 5.0) {
         		x = m1->getCoord(i)[0] - m2->getCoord(i)[0];
         		y = m1->getCoord(i)[1] - m2->getCoord(i)[1];
@@ -355,7 +355,7 @@ double InterLig::superimpose(Molecule* m1, Molecule* m2) {
 		 printf ("TEST3: %d %f %f\n",i,error,m1->atm[i].rms); */
 	}
 	//    printf("testing8 %f\n",m2->atm[1].x);
-	error /= (double) (m1->getLength());
+	error /= (double) (natoms);
 	//error2 /= (double) (natoms);
 	if (natoms == 0)
 		error2 = 99999999;
