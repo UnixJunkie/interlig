@@ -636,7 +636,7 @@ int main(int argc, char *argv[]) {
 				"   -dW            : weight of sequence similarity (e.g. BLOSUM62) in the optimization procedure (default: 0.5)\n" <<
 				"   -eps           : weight of structural similarity in the optimization procedure (default: 0.5)\n" <<
 				"   -nullP         : percentage of ignored atoms in the smaller molecule (default: 0)\n" <<
-				"   -super <path>  : calculate optimal superposition between aligned molecules\n" <<
+				"   -super <path>  : calculate optimal superposition of database molecules onto target molecule\n" <<
 
 				"\nAnnealing options:\n\n" <<
 				"   -anneal <int>  : number of annealing rounds (default: 1)\n" <<
