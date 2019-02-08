@@ -32,10 +32,10 @@ To run the binary in the folder where it is installed:
     -v            : verbose output
     -anneal <int> : number of annealing rounds (default: 1)
     -seed <int>   : seed for the stochastic process (random number generation)
-    -ch <int>     : Markov chain length multiplier (default: 10)\n
-    -matrix <path>: optional path to the sequence similarity matrix (e.g. BLOSUM62)
-    -super <path> : calculate optimal superposition between two aligned PDB files (only -PDB mode)
-                    (output to <patg>)
+    -ch <int>     : Markov chain length multiplier (default: 10)
+    -matrix <path>: optional path to the atom similarity matrix (e.g. MOL2)
+    -super <path> : calculate optimal superposition between two aligned molecules
+                    (outputs to <path>)
     -h            : print this help
 
 ## Usage examples ##

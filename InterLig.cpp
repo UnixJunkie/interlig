@@ -28,10 +28,10 @@ int rounds = 1;
 double chainMult = 10.0;
 
 double percent = 0;
-double T0 = 0.2;
-double d0 = 0.5;
-double epsilon = 0.5;
-double dW = 0.5; //DEFAULT VALUES
+double T0 = 1.0;
+double d0 = 0.6;
+double epsilon = 0.25;
+double dW = 0.75; //DEFAULT VALUES
 long double pvalues[30][1001];
 long double pvaluesMol2[36][1001];
 
@@ -632,16 +632,16 @@ int main(int argc, char *argv[]) {
 
 				"\nAlignment options:\n\n" <<
 
-				"   -d0            : d0 parameter in the Levitt-Gerstein score (default: 0.5)\n" <<
-				"   -dW            : weight of sequence similarity (e.g. BLOSUM62) in the optimization procedure (default: 0.5)\n" <<
-				"   -eps           : weight of structural similarity in the optimization procedure (default: 0.5)\n" <<
+				"   -d0            : d0 parameter in the Levitt-Gerstein score (default: 0.25)\n" <<
+				"   -dW            : weight of sequence similarity in the optimization procedure (default: 0.75)\n" <<
+				"   -eps           : weight of structural similarity in the optimization procedure (default: 0.6)\n" <<
 				"   -nullP         : percentage of ignored atoms in the smaller molecule (default: 0)\n" <<
 				"   -super <path>  : calculate optimal superposition of database molecules onto target molecule\n" <<
 
 				"\nAnnealing options:\n\n" <<
-				"   -anneal <int>  : number of annealing rounds (default: 1)\n" <<
+				"   -anneal <int>  : number of annealing rounds (default: 3)\n" <<
 				"   -ch <int>      : Markov chain length multiplier (default: 10)\n" <<
-				"   -T0 <float>    : Initial annealing temperature (default: 0.2)\n" <<
+				"   -T0 <float>    : Initial annealing temperature (default: 1.0)\n" <<
 				"   -seed <int>    : seed for the stochastic process (random number generation)\n";
 
 	}else if (!strcmp(argv[1], "-mol2")) {
